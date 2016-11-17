@@ -1,0 +1,6 @@
+.Rproj.user
+.Rhistory
+.RData
+.Ruserdata
+myrutils.Rproj
+R/get_db_conn.R

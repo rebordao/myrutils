@@ -3,5 +3,5 @@
 .RData
 .Ruserdata
 myrutils.Rproj
-R/get_db_conn.R
 get_db_conn.R
+.wercker

@@ -1,6 +1,6 @@
 # myrutils
 
-This R package is a collection of utilities
+This R package is a set of utilities
 that facilitate some of my workflows.
 
 ## Author(s)

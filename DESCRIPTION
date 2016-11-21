@@ -1,12 +1,12 @@
 Package: myrutils
+Title: My R Utils
 Version: 0.0.0.9000
 Date: 2016-09-08
-Title: My R Utils
-Authors@R: person("Antonio", "Rebordao", email = "antonio@rebordao.net", role = c("aut", "cre"))
-Description: Set of utilities that facilite my workflow.
+Author: Antonio Rebordao [aut, cre],
+Maintainer: Antonio Rebordao <antonio.rebordao@gmail.com>
+Description: A set of utilities that facilite my workflow.
 License: MIT + file LICENSE
-Depends: R (>= 3.2.2)
-Imports: RJDBC
-LazyData: TRUE
-RoxygenNote: 5.0.1
+Depends:
+    R (>= 3.2.2)
 Suggests: testthat
+RoxygenNote: 5.0.1

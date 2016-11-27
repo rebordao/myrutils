@@ -1,16 +1,19 @@
 box: r-base
 
 build:
-  steps: 
+  steps:
+    - script:
+      name: install_sys_dep
+      code: apt-get update -y && apt-get install r-cran-rjava -y
     - script:
       name: install_r_dep
-      code: Rscript -e "install.packages(c('testthat'))"
+      code: Rscript -e "install.packages(c('testthat', 'RJDBC'))"
     - script:
       name: build
       code: R CMD build .
     - script:
       name: check
-      code: R CMD check --no-manual --no-build-vignettes myrutils_0.0.0.9000.tar.gz
+      code: R CMD check --no-manual --no-build-vignettes myrutils_0.1.1.tar.gz
     - script:
       name: install
-      code: R CMD INSTALL -l /usr/local/lib/R/site-library/ myrutils_0.0.0.9000.tar.gz
+      code: R CMD INSTALL -l /usr/local/lib/R/site-library/ myrutils_0.1.1.tar.gz

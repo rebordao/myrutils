@@ -1,12 +1,14 @@
 Package: myrutils
 Title: My R Utils
-Version: 0.0.0.9000
+Version: 0.1.1
 Date: 2016-09-08
 Author: Antonio Rebordao [aut, cre],
 Maintainer: Antonio Rebordao <antonio.rebordao@gmail.com>
 Description: A set of utilities that facilite my workflow.
 License: MIT + file LICENSE
 Depends:
-    R (>= 3.2.2)
-Suggests: testthat
+  R (>= 3.2.2),
+  RJDBC
+Suggests:
+  testthat
 RoxygenNote: 5.0.1

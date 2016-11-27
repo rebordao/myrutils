@@ -1,20 +1,14 @@
-#' Prepare Backup File
+#' Compresses a set of files/folders into a tar file
 #'
-#' This function creates a tar file of a list of folders and then compresses it.
+#' This function compresses a set of files/folders into a tar file.
 #'
-#' @param paths is a vector containing the relative path of the folders to backup.
+#' @param paths is a vector containing the absolute path of the files/folders to compress.
+#' @param filename is the name of the resulting file sufixed with year, month and day.
 #' @export
 #'
-prepare_backup_file <- function(paths = c(
-  "C:/Ithaka",
-  "C:/Users/antonio.rebordao/Desktop",
-  "C:/Users/antonio.rebordao/Documents",
-  "C:/Users/antonio.rebordao/Downloads",
-  "C:/Users/antonio.rebordao/software",
-  "C:/Users/antonio.rebordao/.ssh"
-  )) {
+do_tarfile <- function(paths, filename) {
 
-  file_name <- sprintf('aegate_backup_%s.tar.gz', format(Sys.Date(), '%Y%m%d'))
+  fname <- sprintf('%s_%s.tar.gz', filename, format(Sys.Date(), '%Y%m%d'))
 
-  system(sprintf("tar -zcvf %s %s", file_name, paste(paths, collapse = ' ')))
+  system(sprintf("tar -zcvf %s %s", fname, paste(paths, collapse = ' ')))
 }

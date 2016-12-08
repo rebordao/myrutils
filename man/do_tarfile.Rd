@@ -4,10 +4,10 @@
 \alias{do_tarfile}
 \title{Compresses a set of files/folders into a tar file}
 \usage{
-do_tarfile(paths, filename)
+do_tarfile(folders, filename)
 }
 \arguments{
-\item{paths}{is a vector containing the absolute path of the files/folders to compress.}
+\item{folders}{is a vector containing the absolute paths of the files/folders to compress.}
 
 \item{filename}{is the name of the resulting file sufixed with year, month and day.}
 }

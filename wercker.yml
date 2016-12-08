@@ -7,7 +7,7 @@ build:
       code: apt-get update -y && apt-get install r-cran-rjava -y
     - script:
       name: install_r_dep
-      code: Rscript -e "install.packages(c('testthat', 'RJDBC'))"
+      code: Rscript -e "install.packages(c('testthat', 'RJDBC', 'yaml'))"
     - script:
       name: build
       code: R CMD build .

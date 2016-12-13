@@ -4,16 +4,18 @@ build:
   steps:
     - script:
       name: install_sys_dep
-      code: apt-get update -y && apt-get install r-cran-rjava -y
+      code: |
+        apt-get update -y && apt-get install -y \
+          r-cran-rjava
     - script:
       name: install_r_dep
-      code: Rscript -e "install.packages(c('testthat', 'RJDBC', 'yaml'))"
+      code: Rscript -e "install.packages(c('testthat', 'RJDBC', 'yaml', 'futile.logger'))"
     - script:
       name: build
       code: R CMD build .
     - script:
       name: check
-      code: R CMD check --no-manual --no-build-vignettes myrutils_0.1.1.tar.gz
+      code: R CMD check --no-manual --no-build-vignettes myrutils_0.1.0.tar.gz
     - script:
       name: install
-      code: R CMD INSTALL -l /usr/local/lib/R/site-library/ myrutils_0.1.1.tar.gz
+      code: R CMD INSTALL -l /usr/local/lib/R/site-library/ myrutils_0.1.0.tar.gz

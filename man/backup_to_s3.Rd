@@ -4,21 +4,38 @@
 \alias{backup_to_s3}
 \title{Backups a list of folders into S3}
 \usage{
-backup_to_s3(bucket_name, folder_name, file_path = "~/.folders_to_backup.yml")
+backup_to_s3(bucket, root_folder, profile, dryrun = T,
+  folders_file = "~/.folders_to_backup.yml",
+  exclusions_file = "~/.exclusions_from_backup.yml")
 }
 \arguments{
-\item{bucket_name}{is the name of the bucket where the backup is stored.
-If it doesn't exist, it's created automatically.}
+\item{bucket}{Is the name of the s3 bucket where the backup is stored.}
 
-\item{folder_name}{is the name of the root folder where the backup is stored.
-If it doesn't exist, it's created automatically.}
+\item{root_folder}{Is the name of the root folder where the backup
+is stored. \cr If it doesn't exist, it's created automatically.}
 
-\item{file_path}{is the path of the file that contains the folders to backup.
-By default is ~/.folders_to_backup.yml. Example file in folder inst/config.}
+\item{profile}{Is a profile name contained in ~/.aws/credentials.}
+
+\item{dryrun}{When equal to T doesn't backup. Only does simulation.}
+
+\item{folders_file}{Is the path of the file that contains the folders to backup.
+By default is ~/.folders_to_backup.yml.
+Example file in folder inst/config.}
+
+\item{exclusions_file}{is the path of the file (if applicable) that
+contains the folders or patterns to exclude from the backup.
+By default is ~/.exclusions_from_backup.yml.
+Example file in folder `inst/config`.}
 }
 \description{
 This function backups a list of folders into S3.
-It requires that you install the AWS CLI and configure
-a profile called backuper in file ~/.aws/credentials.
+It requires that you:
+\itemize{
+  \item install the AWS CLI;
+  \item configure a profile in file ~/.aws/credentials;
+  \item create an s3 bucket where the profile can read/write into;
+  \item create a yaml file containing the list of folders for backup.
+}
+Optionally it's possible to define file/folder/pattern exclusions.
 }
 

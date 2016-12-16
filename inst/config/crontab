@@ -1,0 +1,5 @@
+MAIL=""
+SHELL=/bin/sh
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+
+*/15 * * * * Rscript -e "library(myrutils); backup_to_s3('name_of_bucket', 'name_of_root_folder', 'name_of_profile')"

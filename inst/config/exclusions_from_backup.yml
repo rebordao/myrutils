@@ -1,2 +1,4 @@
 - '.wercker/*'
 - '.Rproj.user/*'
+- DS_Store
+- ~*

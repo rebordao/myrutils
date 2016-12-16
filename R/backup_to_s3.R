@@ -55,7 +55,7 @@ backup_to_s3 <- function(
     does_profile_works(), sprintf("Profile %s doesn't exist", profile))
 
   # Check if s3 bucket exists
-  flog.info(sprintf("Testing if s3 bucket %s exists", bucket))
+  flog.info(sprintf("Testing if bucket %s exists", bucket))
   does_bucket_exist <- function() {
     any(
       grepl(sprintf(" %s", bucket),
@@ -72,7 +72,7 @@ backup_to_s3 <- function(
   # Sync engine, preserves directory structure
   sync_engine <- function(folder_2_backup) {
     flog.info(
-      sprintf("Backuping up folder %s into %s", folder_2_backup, root_folder))
+      sprintf("Backuping up folder %s into bucket %s", folder_2_backup, root_folder))
 
     backup_str <- sprintf(
       "aws s3 sync %s s3://%s/%s/%s --dryrun --delete --profile %s",

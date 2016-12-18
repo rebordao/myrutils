@@ -1,0 +1,86 @@
+---
+title: ""
+author: "Antonio Rebordao antonio@rebordao.net"
+date: "`r format(Sys.time(), '%Y-%m-%d %H:%M')`"
+output: html_document
+---
+
+## Setup
+
+### User Defined Parameters
+
+```{r user_defined_config}
+final_report <- T
+```
+
+### Toolset
+
+```{r setup}
+knitr::opts_chunk$set(echo = T, message = T, warning = T)
+if (final_report) knitr::opts_chunk$set(message = F, warning = F)
+```
+
+```{r library_importation}
+library(dplyr)
+library(readr)
+library(DT)
+library(data.table)
+library(ggplot2)
+```
+
+## Problem Analysis & My Goal
+
+### Problem Analysis
+
+### My Goal
+
+## Data Ingestion
+
+```{r data_ingestion1}
+# Read a sample
+raw_data <- readr::read_csv('', n_max = 1000)
+head(raw_data)
+tail(raw_data)
+```
+
+```{r data_ingestion2}
+```
+
+## Data Cleaning
+
+```{r data_cleaning1}
+# DT::datatable(head(dataset, 500)) # limited to a sample due to poor hardware
+```
+
+## Data Transformation
+
+```{r data_transformation1}
+```
+
+## Data Exploration
+
+### Exploration
+
+### Hypothesis 1
+
+```{r}
+# # Compute Decision Tree Model
+# model_dt <- rpart(koi_disposition ~ ., feats, maxdepth = 4)
+# 
+# # Plot tree
+# rpart.plot(model_dt,
+#            type = 4,
+#            extra = 101,
+#            under = TRUE,
+#            branch = 0,
+#            varlen = 0,
+#            faclen = 0,
+#            main = "Decision Tree | CONFIRMED versus FALSE POSITIVE",
+#            box.col = c("yellow", "palegreen2")[model_dt$frame$yval])
+```
+
+## Conclusion
+
+## Next Steps
+
+## Comments

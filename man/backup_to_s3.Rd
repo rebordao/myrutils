@@ -25,7 +25,7 @@ Example file in folder inst/config.}
 \item{exclusions_file}{is the path of the file (if applicable) that
 contains the folders or patterns to exclude from the backup.
 By default is ~/.exclusions_from_backup.yml.
-Example file in folder `inst/config`.}
+Example file in folder inst/config.}
 }
 \description{
 This function backups a list of folders into S3.

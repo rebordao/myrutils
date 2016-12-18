@@ -15,7 +15,7 @@ build:
       code: R CMD build .
     - script:
       name: check
-      code: R CMD check --no-manual --no-build-vignettes myrutils_0.1.0.tar.gz
+      code: R CMD check --no-manual --no-build-vignettes myrutils_0.3.0.tar.gz
     - script:
       name: install
-      code: R CMD INSTALL -l /usr/local/lib/R/site-library/ myrutils_0.1.0.tar.gz
+      code: R CMD INSTALL -l /usr/local/lib/R/site-library/ myrutils_0.3.0.tar.gz

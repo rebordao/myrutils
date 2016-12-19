@@ -36,6 +36,8 @@ It requires that you:
   \item create an s3 bucket where the profile can read/write into;
   \item create a yaml file containing the list of folders for backup.
 }
-Optionally it's possible to define file/folder/pattern exclusions.
+Optionally it's possible to define file/folder/pattern exclusions.\cr
+To avoid concurrent cronjobs I implemented a PIDfile-based method
+(checks if last PID is still active; if yes, do nothing; if not, execute).
 }
 

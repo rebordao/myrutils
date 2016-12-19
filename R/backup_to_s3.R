@@ -8,7 +8,9 @@
 #'   \item create an s3 bucket where the profile can read/write into;
 #'   \item create a yaml file containing the list of folders for backup.
 #' }
-#' Optionally it's possible to define file/folder/pattern exclusions.
+#' Optionally it's possible to define file/folder/pattern exclusions.\cr
+#' To avoid concurrent cronjobs I implemented a PIDfile-based method
+#' (checks if last PID is still active; if yes, do nothing; if not, execute).
 #'
 #' @param bucket Is the name of the s3 bucket where the backup is stored.
 #' @param root_folder Is the name of the root folder where the backup
@@ -33,6 +35,9 @@ backup_to_s3 <- function(
 
   # Create appender (writes logs to file + console)
   invisible(flog.appender(appender.tee('~/.backup_to_s3.log')))
+
+  # Avoid overlapping cronjobs
+  myrutils::no_overlapping_cronjobs()
 
   # Check if aws cli is installed
   flog.info("Testing if aws cli is installed")

@@ -2,16 +2,19 @@
 % Please edit documentation in R/do_tarfile.R
 \name{do_tarfile}
 \alias{do_tarfile}
-\title{Compresses a set of files/folders into a tar file}
+\title{Compresses a set of files/folders into a tar.gz file}
 \usage{
 do_tarfile(folders, filename)
 }
 \arguments{
-\item{folders}{is a vector containing the absolute paths of the files/folders to compress.}
+\item{folders}{Is a vector containing the paths of the
+files/folders to compress. They can be absolute or relative.}
 
-\item{filename}{is the name of the resulting file sufixed with year, month and day.}
+\item{filename}{Is the name for the resulting tar.gz file. This name will be
+sufixed with year, month and day.}
 }
 \description{
-This function compresses a set of files/folders into a tar file.
+Compresses a set of files/folders into a tar.gz file.
+Saves output into working directory.
 }
 

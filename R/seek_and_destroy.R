@@ -6,6 +6,7 @@
 #' Also, the seek and destroy operation only applies to ~/.
 #'
 #' @export
+#' 
 seek_and_destroy <- function(stuff_to_remove) {
   
   engine <- function(name) {

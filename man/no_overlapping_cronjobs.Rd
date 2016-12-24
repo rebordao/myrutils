@@ -7,6 +7,8 @@
 no_overlapping_cronjobs()
 }
 \description{
-Avoids overlapping cron jobs using a PID-file method.
+Avoids overlapping cron jobs using a PID-file method.\cr
+Usage: insert myrutils::no_overlapping_cronjobs() in the R code that you want
+to execute via the cronjob. Place it at the top of the script/function.
 }
 

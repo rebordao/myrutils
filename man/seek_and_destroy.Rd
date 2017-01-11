@@ -6,6 +6,10 @@
 \usage{
 seek_and_destroy(stuff_to_remove)
 }
+\arguments{
+\item{stuff_to_remove}{Is a vector with names of folders or files to remove.
+Ex: c('.DS_Store', '.wercker')}
+}
 \description{
 Remove those unwanted files/folders that were generated automatically.
 For example, '.DS_Store' or '.wercker'.\cr
